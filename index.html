@@ -10,7 +10,11 @@
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
   <script>
   $( function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+    dateFormat: "dd.mm.yy",
+    showAnim: "slideDown",
+    minDate: 0
+});
   } );
   </script>
 
@@ -30,7 +34,13 @@
   <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
   <script>
   $( function() {
-    $( "#slider" ).slider(1-100);
+    $( "#slider" ).slider({
+		min: 0,
+        max: 100,
+        value: 50,
+        step: 5,
+        animate: true
+    });
   } );
   </script>
  </head>
@@ -95,6 +105,7 @@
   </body>
 
 </html>
+
 
 
 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Widgets</title>
+
+    <!-- jQuery UI styles -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+    <!-- Custom UI styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f7;
+            padding: 30px;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Datepicker input */
+        #datepicker {
+            padding: 10px;
+            border: 2px solid #4b79ff;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 180px;
+            margin-bottom: 25px;
+        }
+
+        /* Menu */
+        .ui-menu {
+            width: 200px;
+            font-size: 15px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        .ui-menu-item-wrapper {
+            padding: 10px;
+        }
+
+        /* Slider */
+        #slider {
+            width: 300px;
+            margin-top: 30px;
+            background: #ccd6ff;
+            height: 10px;
+            border-radius: 8px;
+        }
+
+        .ui-slider-handle {
+            border-radius: 50% !important;
+            width: 18px !important;
+            height: 18px !important;
+            background: #4b79ff !important;
+        }
+
+        .ui-slider-range {
+            background: #4b79ff !important;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: "dd.mm.yy",
+                showAnim: "slideDown",
+                minDate: 0
+            });
+
+            $("#menu").menu();
+
+            $("#slider").slider({
+                min: 0,
+                max: 100,
+                value: 50,
+                step: 5,
+                animate: true
+            });
+
+            $("input").click(function () {
+                alert("Вітаємо! Ви полагодили код!");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>Виберіть дату:</h2>
+    <p><input type="text" id="datepicker"></p>
+
+    <h2>Меню товарів:</h2>
+    <ul id="menu">
+        <li><div>Книги</div></li>
+        <li><div>Одяг</div></li>
+        <li><div>Електроніка</div>
+            <ul>
+                <li><div>Побутова техніка</div></li>
+                <li><div>Стерео для авто</div></li>
+                <li class="ui-state-disabled"><div>ДБЖ</div></li>
+            </ul>
+        </li>
+        <li><div>Фільми</div></li>
+        <li><div>Музика</div>
+            <ul>
+                <li><div>Рок</div>
+                    <ul>
+                        <li><div>Альтернативний</div></li>
+                        <li><div>Класичний</div></li>
+                    </ul>
+                </li>
+                <li><div>Джаз</div>
+                    <ul>
+                        <li><div>Вільний джаз</div></li>
+                        <li><div>Біг-бенд</div></li>
+                        <li><div>Сучасний</div></li>
+                    </ul>
+                </li>
+                <li><div>Поп</div></li>
+                <li><div>Класика</div></li>
+                <li><div>Сальса</div></li>
+            </ul>
+        </li>
+        <li class="ui-state-disabled"><div>Новинки (Скоро)</div></li>
+    </ul>
+
+    <h2>Слайдер:</h2>
+    <div id="slider"></div>
+
+</body>
+</html>
